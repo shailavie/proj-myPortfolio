@@ -31,7 +31,6 @@ function renderProjs() {
 function onOpenProjModal(projId) {
     console.log('i was clicked')
     var proj = getProjById(projId);
-    // <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     var strHtml = `
     <div class="portfolio-modal modal hide" id="modal-proj-${projId}">
             <div class="modal-dialog">
@@ -48,10 +47,10 @@ function onOpenProjModal(projId) {
                         <!-- Project Details Go Here -->
                         <h2>${proj.name}</h2>
                         <p class="item-intro text-muted">${proj.title}</p>
-                        <img class="img-fluid d-block mx-auto" src="${proj.imgCover}" alt="">
+                        <a href="${proj.link}" target="_blank"><img class="img-fluid d-block mx-auto img-box" src="${proj.imgCover}" alt=""></a>
                         <p>${proj.desc}</p>
                         <ul class="list-inline">
-                        <li>Date: ${proj.createdAt}</li>
+                        <li>Date: ${proj.publishedAt}</li>
                         <li><a href="${proj.link}" target="_blank">Link</a></li>
                         </ul>
                         <button class="btn btn-primary" data-dismiss="modal" type="button" onclick="onCloseModal('${projId}')">
@@ -76,40 +75,3 @@ function onCloseModal(projId) {
     elModal.style.display = 'none'
 }
 
-/*
-<li>Client: Threads</li>
-<li>Category: Illustration</li>
-*/
-
-function validateForm() {
-    var name = document.getElementById('name').value;
-    if (name == "") {
-        document.getElementById('status').innerHTML = "Name cannot be empty";
-        return false;
-    }
-    var email = document.getElementById('email').value;
-    if (email == "") {
-        document.getElementById('status').innerHTML = "Email cannot be empty";
-        return false;
-    } else {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!re.test(email)) {
-            document.getElementById('status').innerHTML = "Email format invalid";
-            return false;
-        }
-    }
-    var subject = document.getElementById('subject').value;
-    if (subject == "") {
-        document.getElementById('status').innerHTML = "Subject cannot be empty";
-        return false;
-    }
-    var message = document.getElementById('message').value;
-    if (message == "") {
-        document.getElementById('status').innerHTML = "Message cannot be empty";
-        return false;
-    }
-    document.getElementById('status').innerHTML = "Sending...";
-    document.getElementById('contact-form').submit();
-
-}
- 
