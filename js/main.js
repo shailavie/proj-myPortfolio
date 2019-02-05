@@ -28,6 +28,20 @@ function renderProjs() {
 }
 
 
+function sendForm(){
+    var name = $('#name').val();
+    var subject = $('#subject').val();
+    var email = $('#email').val();
+    var text = $('#text').val();
+    // var url =`https://mail.google.com/mail/?view=cm&fs=1&to=shai.lavie@gmail.com&su=${subject}SUBJECT&body=${text}`;
+    submitEmail(subject,text)
+}
+
+function submitEmail($subject,$msg) {
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=Sarelk@gmail.com&su='+ $subject +'&body='+ $msg +'', '_blank');
+}
+
+
 function onOpenProjModal(projId) {
     console.log('i was clicked')
     var proj = getProjById(projId);

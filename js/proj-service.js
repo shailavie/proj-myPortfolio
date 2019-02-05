@@ -12,7 +12,7 @@ var gProjs = [
         labels:  ['fun', 'memory', 'game', 'rick', 'morty'],
         imgCover: 'img/portfolio/rickAndMorty.png',
         publishedAt: '2018-10-23',
-        link : 'https://shailavie.github.io/proj-rickAndMorty/'
+        link : 'https://shai-memory-game.herokuapp.com/index.html'
     },
     {
         id: getRandId(6),
