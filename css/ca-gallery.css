@@ -70,19 +70,7 @@ body {
     -webkit-tap-highlight-color: #fed136;
 }
 
-.offcanvas-container {
-    position: fixed;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 90px;
-    width: 90px;
-    cursor: pointer;
-    /* background-color: green; */
-    top: 5.2%;
-    left: 2.2%;
-}
+ 
 
 .offcanvas-btn {
     z-index: 100000;
@@ -100,7 +88,7 @@ body {
     margin-left: 0;
     transition: all 0.3s ease;
 }
-.offcanvas-btn-open, .offcanvas-container {
+.offcanvas-btn-open {
     margin-left: 80vw;
 }
 .offcanvas-aside {
@@ -371,7 +359,7 @@ header.masthead .intro-text .intro-heading {
 }
 .portfolio-modal .close-modal {
     position: absolute;
-    top: 25px;
+    top: 10vh;
     right: 25px;
     width: 75px;
     height: 75px;
@@ -813,3 +801,6 @@ strong {
     filter: grayscale(100%);
 }
  
+.img-box {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
